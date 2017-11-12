@@ -226,81 +226,150 @@
                 android:textColor="#000000"
                 android:layout_marginLeft="15dp"
                 android:text="Add Trusted Contacts"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/form_contact1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/form_name1"/>
+
+                    <Button
+                        android:id="@+id/form_addbtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="+"
+                        android:textSize="75dp"/>
+
+                </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
+                android:gravity="right"
+                android:orientation="horizontal">
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/security_service2_form_b1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-                    <Button
-                        android:id="@+id/security_service2_form_b2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-                    <Button
-                        android:id="@+id/security_service2_form_b3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-                    <Button
-                        android:id="@+id/security_service2_form_b4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-                </LinearLayout>
-                <LinearLayout
+                    android:id="@+id/form_contact2"/>
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:id="@+id/form_name2"/>
 
-                    <Button
-                        android:id="@+id/security_service2_form_b5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-                    <Button
-                        android:id="@+id/security_service2_form_b6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-                    <Button
-                        android:id="@+id/security_service2_form_b7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-                    <Button
-                        android:id="@+id/security_service2_form_b8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:text="+"
-                        android:textSize="75dp"/>
-
-                </LinearLayout>
+                <Button
+                    android:id="@+id/form_addbtn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="+"
+                    android:textSize="75dp"/>
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_contact3"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_name3"/>
+
+                <Button
+                    android:id="@+id/form_addbtn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="+"
+                    android:textSize="75dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_contact4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_name4"/>
+
+                <Button
+                    android:id="@+id/form_addbtn4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="+"
+                    android:textSize="75dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_contact5"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_name5"/>
+
+                <Button
+                    android:id="@+id/form_addbtn5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="+"
+                    android:textSize="75dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_contact6"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/form_name6"/>
+
+                <Button
+                    android:id="@+id/form_addbtn6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="+"
+                    android:textSize="75dp"/>
+
+            </LinearLayout>
+
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
