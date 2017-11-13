@@ -109,6 +109,14 @@ public class NavigationDrawer extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        Button b6=(Button)findViewById(R.id.Navigation_b6);
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(NavigationDrawer.this,Calendar.class);
+                startActivity(intent);
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

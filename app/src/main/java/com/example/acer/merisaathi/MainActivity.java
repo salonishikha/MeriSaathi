@@ -1,6 +1,7 @@
 package com.example.acer.merisaathi;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,6 +37,9 @@ import com.google.android.gms.plus.People;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 
+import java.io.File;
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private SignInButton signInButton;
@@ -46,6 +50,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private ImageView iv;
     private AQuery aQuery;
     private Button btn;
+
+    String email;
+
+
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String Name = "nameKey";
+    public static final String Phone = "phoneKey";
+    public static final String Email = "emailKey";
+    SharedPreferences sharedpreferences;
 
     private CoordinatorLayout coordinatorlayout;
     /**
@@ -65,6 +78,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         setSupportActionBar(toolbar);
 
         Log.d(LOG_TAG, "OnCreate");
+
+
+        String readfilename = "email.txt";
+        FileOperations fop = new FileOperations();
+        String text = fop.read(readfilename);
+        if(text!=null){
+            Toast.makeText(MainActivity.this,text, Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(MainActivity.this,NavigationDrawer.class);
+            startActivity(intent);
+        }
+
 
 //        Button be=(Button) findViewById(R.id.loginButton);
 //        be.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +141,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
                 startActivityForResult(signInIntent, SIGN_IN);
 
+
+
             }
         });
 
@@ -135,6 +161,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                 Toast.makeText(MainActivity.this, "Logout Successfully!", Toast.LENGTH_SHORT).show();
                             }
                         });
+                String filename = "email.txt";
+                FileOperations fop = new FileOperations();
+                try {
+                    fop.delFile(filename);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -262,6 +295,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             //Displaying name and email
             String name = acct.getDisplayName();
             final String mail = acct.getEmail();
+            email=acct.getEmail().toString();
+
             // String photourl = acct.getPhotoUrl().toString();
 
             final String givenname="",familyname="",displayname="",birthday="";
@@ -296,8 +331,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     // Log.d(TAG,"Image "+person.getImage());
                 }
             });
+            FileOperations fop = new FileOperations();
+            fop.write("email.txt", email);
+            if(fop.write("email.txt", email)){
+                Toast.makeText(getApplicationContext(), "email"+".txt created", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(getApplicationContext(), "I/O error", Toast.LENGTH_SHORT).show();
 
+            }
             Intent intent=new Intent(MainActivity.this,Form.class);
+
             startActivity(intent);
         } else {
             //If login fails
